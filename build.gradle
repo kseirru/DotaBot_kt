@@ -1,0 +1,33 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.9.0'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group = 'dev.kseirru'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation("com.github.minndevelopment:jda-ktx:9370cb1")
+    implementation("io.github.cdimascio:dotenv-java:2.3.2")
+    implementation("com.github.Chew:JDA-Chewtils:a86d4de")
+    implementation("ch.qos.logback:logback-classic:1.4.7")
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("net.dv8tion:JDA:5.0.0-beta.13")
+    implementation("org.duckdb:duckdb_jdbc:0.8.1")
+}
+
+
+kotlin {
+    jvmToolchain(8)
+}
+
+application {
+    mainClassName = 'MainKt'
+}
